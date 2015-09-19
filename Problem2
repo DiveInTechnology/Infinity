@@ -1,0 +1,51 @@
+#2 Dynamic Scheduling in a scalable distributed system
+Problem Description:
+
+The goal is to build a scalable distributed system that can batch requests and submit them to downstream consumers efficiently.
+
+System Requirements:
+
+System will accept upstream input requests with payload and sends to a downstream system.
+Higher priority requests need to be sent to downstream faster than lower priority requests.
+System will have configurable SLA for priorities
+Requests:
+
+Requests are streamed with set of parameters which are key value pairs with priority.
+Example:
+
+ITEM_ID,MERCHANT_ID,MARKETPLACE_ID,PRIORITY,DATA_TYPE,PAYLOAD
+ITEM1,12345,4,LOW,ITEM
+ITEM2,12645,1,HIGH,PRICE
+ITEM3,17345,4,LOW,AUX_ITEM
+ITEM2,12645,5,LOWEST,ITEM
+ITEM3,19345,4,HIGHEST,AUX_ITEM
+ITEM1,12345,4,NORMAL,ITEM
+ITEM1,12345,4,LOW,ITEM
+Target system:
+
+Target system can accept maximum 10 requests per MERCHANT_ID per hour.
+Each target system request can represent maximum of 10K payloads.
+Item IDs(the upstream request data) should be unique in a target system request.
+Each target system request should be for a particular MERCHANT_ID, DATA_TYPE, PRIORITY and MARKETPLACE_ID.
+Technology
+
+Programming Language: Java, but using C#/ C++ is acceptable 
+Other Technologies: AWS
+
+Judging Criteria
+
+The judging will be based on 3 themes. They are Think Big, Deliver Result, and Invent & Simplify
+
+Think Big - 20%
+Architecture & Design - 10%
+Scalability - 10%
+Deliver Result - 50%
+Working Solution - 30%
+Performance - 5%
+Reliability & Resiliency - 5%
+Optimization (CPU, Storage, Memory) - 5%
+Quality (Test data) - 5%
+Invent & Simplify - 30%
+Use of new ideas and methods - 10%
+Design Pattern used - 10%
+Tools built around debugging - 10%
